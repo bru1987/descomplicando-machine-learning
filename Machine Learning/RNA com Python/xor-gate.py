@@ -59,10 +59,10 @@ class NeuralNetwork():
 
     # A rede neural escreve seus pesos
     def print_weights(self):
-        print "    Camada 1 (4 neurônios, cada um com 3 entradas): "
-        print self.layer1.synaptic_weights
-        print "    Camada 2 (1 neurônio, cada um com 4 entradas):"
-        print self.layer2.synaptic_weights
+        print ("    Camada 1 (4 neurônios, cada um com 3 entradas): ")
+        print ("self.layer1.synaptic_weights")
+        print ("    Camada 2 (1 neurônio, cada um com 4 entradas):")
+        print ("self.layer2.synaptic_weights")
 
 if __name__ == "__main__":
 
@@ -78,7 +78,7 @@ if __name__ == "__main__":
     # Combina as camadas para criar uma rede neural
     neural_network = NeuralNetwork(layer1, layer2)
 
-    print "Valores aleatórios de pesos sinápticos: "
+    print ("Valores aleatórios de pesos sinápticos: ")
     neural_network.print_weights()
 
     # O set de treinamento. Temos 7 exemplos, cada um consistindo de 3 valores de entrada
@@ -90,10 +90,10 @@ if __name__ == "__main__":
     # Número de iterações: 60000.
     neural_network.train(training_set_inputs, training_set_outputs, 60000)
 
-    print "Novos pesos sinápticos após treinamento:  "
+    print ("Novos pesos sinápticos após treinamento:  ")
     neural_network.print_weights()
 
     # Testando a rede neural com a nova situação
-    print "Considerando a nova situação [1, 1, 0] -> ?: "
+    print ("Considerando a nova situação [1, 1, 0] -> ?: ")
     hidden_state, output = neural_network.think(array([1, 1, 0]))
-    print output
+    print ("output")
