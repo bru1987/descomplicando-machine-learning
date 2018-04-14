@@ -1,16 +1,22 @@
-# Input do usuário
-str = input("Insira um número: ")
+import random
 
-# We need to know how many characters are in the string so we can place a "pointer" in the middle
-string_size = len(str)
+# Let's teach the user to play the game
+print("Welcome to the guesing game!")
+print("Type in exit to leave the game anytime")
 
-if string_size % 2 != 0:
-    stop = int((string_size - 1)/2)
-else:
-    stop = int(string_size/2)
-    
-# Checking all numbers
-for i in (0,stop):
-    if str[i] != str[string_size-i-1]:
-        print("Não é palíndromo")
-        break
+while True:
+    number = random.randint(0, 9)
+    print("I am thinking of a number between 0 and 9. Which number is it?")
+    while True:
+        user_guess = int(input("Your guess: "))
+        if user_command == "exit":
+            break
+        else:
+            if user_guess > number:
+                print("Your guess is too high")
+            elif user_guess < number:
+                print("Your guess is too low")
+            elif user_guess == number: 
+                print("Yes that's the number!")
+                break
+            break
